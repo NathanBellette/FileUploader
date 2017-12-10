@@ -1,0 +1,31 @@
+import * as React from 'react';
+import { RouteComponentProps } from 'react-router';
+import 'isomorphic-fetch';
+// import * as Dropzone from 'react-dropzone/dist/index';
+
+export class Home extends React.Component<RouteComponentProps<{}>, {}> {
+
+    constructor() {
+        super();
+        this.state = {
+            files: []
+        };
+    }
+
+    onDrop = files => {
+        this.setState({
+            files
+        }); 
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>Upload Images</h1>
+                {/* <Dropzone onDrop={this.onDrop}>
+                    Click or select files to upload.
+                </Dropzone>  */}
+            </div>
+        );
+    }
+}
